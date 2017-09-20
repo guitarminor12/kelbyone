@@ -9,9 +9,9 @@ function getCourses(){
             if (this.readyState === 4) {
                 var data = JSON.parse(this.responseText);
                 if(data.token && data.token.length){
-                    handleSuccess(data);
+                    // handleSuccess(data);
                 } else {
-                    handleFailure(data);
+                    // handleFailure(data);
                 }
             }
         });
@@ -43,7 +43,7 @@ function getCategories(){
                     dropDownList.add(option);
                 }
             } else {
-                handleFailure(dataResponse);
+                //handleFailure(dataResponse);
             }
         }
     });
