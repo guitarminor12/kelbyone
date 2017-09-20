@@ -23,7 +23,7 @@ function getCourses(category) {
     if (category && category.length) {
         xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/categories/" + category + "/courses?per_page=100");
     } else {
-        xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses");
+        xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses?per_page=10");
     }
     xhr.setRequestHeader("content-type", "application/json");
     //xhr.onerror = handleError;
