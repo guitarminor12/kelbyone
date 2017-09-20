@@ -21,7 +21,7 @@ function makeRequest(username, password) {
     xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/users/login");
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("authorization", encodedAuth);
-    xhr.setRequestHeader("cache-control", "no-cache");
+    //xhr.setRequestHeader("cache-control", "no-cache");
 
     xhr.send(data);
 
