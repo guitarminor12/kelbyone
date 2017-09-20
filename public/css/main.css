@@ -1,0 +1,25 @@
+body {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4285714;
+    color: #787878;
+    letter-spacing: -.33px;
+}
+
+.login-form--main {
+    padding: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.btn-kelbyone {
+    background-color: orange;
+    color: white;
+    width: 100%;
+}
+
+button:hover {
+    background-color: gray;
+    color: orange;
+}
