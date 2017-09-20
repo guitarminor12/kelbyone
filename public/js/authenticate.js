@@ -11,11 +11,11 @@ function login(username, password) {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            var data = json.parse(this.responseText);
-            if(data.token && data.token.length){
-                handleSuccess(data);
+            var dataResponse = json.parse(this.responseText);
+            if(dataResponse.token && dataResponse.token.length){
+                handleSuccess(dataResponse);
             } else {
-                handleFailure(data);
+                handleFailure(dataResponse);
             }
         }
     });
@@ -26,7 +26,7 @@ function login(username, password) {
     xhr.onerror = handleError;
 
     xhr.send(data);
-
+    
 }
 
 

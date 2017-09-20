@@ -27,23 +27,23 @@ function getCourses(){
 
 function getCategories(){
     var dropDownList = document.getElementById("categories");
-
+    var data = null;
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            var data = json.parse(this.responseText);
-            if(data.token && data.token.length){
-                for (var i = 0; i < data.length; i++) {
-                    var category = data[i];
+            var dataResponse = json.parse(this.responseText);
+            if(dataResponse.token && dataResponse.token.length){
+                for (var i = 0; i < dataResponse.length; i++) {
+                    var category = dataResponse[i];
                     var option = document.createElement("option");
                     option.text = category.display_name;
                     option.value = category.id;
                     dropDownList.add(option);
                 }
             } else {
-                handleFailure(data);
+                handleFailure(dataResponse);
             }
         }
     });
