@@ -1,4 +1,4 @@
-function getCourses(){
+function getCourses(category){
 
     var data = null;
     
@@ -10,13 +10,18 @@ function getCourses(){
                 var data = JSON.parse(this.responseText);
                 if(data.token && data.token.length){
                     // handleSuccess(data);
+                    console.log(data);
                 } else {
                     // handleFailure(data);
                 }
             }
         });
     
-        xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses");
+        if(category && category.length){
+            xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/categories/" + category + "/courses?per_page=100");
+        } else {
+            xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses");
+        }
         xhr.setRequestHeader("content-type", "application/json");
         xhr.onerror = handleError;
     
@@ -53,4 +58,7 @@ function getCategories(){
 
 (function(){
     getCategories();
+    document.getElementById("categories").addEventListener("change", function(){
+        getCourses(document.getElementById("categories").value);
+    }); 
 })();
