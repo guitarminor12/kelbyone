@@ -23,7 +23,7 @@ function getCourses(category){
             xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses");
         }
         xhr.setRequestHeader("content-type", "application/json");
-        xhr.onerror = handleError;
+        //xhr.onerror = handleError;
     
         xhr.send(data);
 
