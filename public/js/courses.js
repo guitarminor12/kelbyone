@@ -34,8 +34,8 @@ function getCategories(){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             var dataResponse = JSON.parse(this.responseText);
-                for (var i = 0; i < dataResponse.length; i++) {
-                    var category = dataResponse[i];
+                for (var i = 0; i < dataResponse.data.length; i++) {
+                    var category = dataResponse.data[i];
                     var option = document.createElement("option");
                     option.text = category.display_name;
                     option.value = category.id;
@@ -44,7 +44,7 @@ function getCategories(){
         }
     });
 
-    xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses");
+    xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses?per_page=100");
     xhr.setRequestHeader("content-type", "application/json");
     //xhr.onerror = handleError;
 
