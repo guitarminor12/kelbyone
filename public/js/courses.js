@@ -1,5 +1,5 @@
 function populateCourseList(course){
-    document.getElementById('courses-list').innerHTML += course;
+    document.getElementById('courses-list').innerHTML += JSON.stringify(course, null, 4);
 }
 
 
