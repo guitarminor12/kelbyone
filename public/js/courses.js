@@ -7,7 +7,7 @@ function getCourses(){
     
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
-                var data = json.parse(this.responseText);
+                var data = JSON.parse(this.responseText);
                 if(data.token && data.token.length){
                     handleSuccess(data);
                 } else {
@@ -33,7 +33,7 @@ function getCategories(){
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            var dataResponse = json.parse(this.responseText);
+            var dataResponse = JSON.parse(this.responseText);
             if(dataResponse.token && dataResponse.token.length){
                 for (var i = 0; i < dataResponse.length; i++) {
                     var category = dataResponse[i];
