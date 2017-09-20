@@ -44,7 +44,7 @@ function getCategories(){
         }
     });
 
-    xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/courses?per_page=100");
+    xhr.open("GET", "https://kelbynew.staging.wpengine.com/wp-json/ko/v2/categories?per_page=100");
     xhr.setRequestHeader("content-type", "application/json");
     //xhr.onerror = handleError;
 
