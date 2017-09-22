@@ -4,7 +4,10 @@ function populateCourseList(course){
 
 
 function getCourses(category) {
-
+    if (category && category.length) {
+        document.getElementById('courses-list').innerHTML = '';
+    }
+    
     var data = null;
 
     var xhr = new XMLHttpRequest();
