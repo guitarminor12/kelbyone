@@ -10,7 +10,7 @@ function populateCourseList(course) {
     container.appendChild(createCourseChildren("thumbnail_url", course.thumbnail_url));
     container.appendChild(createCourseChildren("published_date", course.published_date));
 
-    document.getElementById('courses-list').innerHTML += container;
+    document.getElementById('courses-list').appendChild(container);
 }
 
 
