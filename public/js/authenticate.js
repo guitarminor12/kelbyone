@@ -14,12 +14,12 @@ function login(username, password) {
             var dataResponse = JSON.parse(this.responseText);
             window.location.replace("courses.html")
 
-            // tokens are not working with the way the api is configured
-            // if(dataResponse.token && dataResponse.token.length){
-            //     handleSuccess(dataResponse);
-            // } else {
-            //     handleFailure(dataResponse);
-            // }
+            //tokens are not working with the way the api is configured
+             if(dataResponse.token && dataResponse.token.length){
+                 handleSuccess(dataResponse);
+             } else {
+                 handleFailure(dataResponse);
+             }
         }
     });
 
