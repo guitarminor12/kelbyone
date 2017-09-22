@@ -31,10 +31,10 @@ function getCourseDetail(id) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             var dataResponse = JSON.parse(this.responseText);
-            for (var i = 0; i < dataResponse.data.length; i++) {
-                var course = dataResponse.data[i];
+            
+                var course = dataResponse.data;
                 populateCourseList(course);
-            }
+
         }
     });
 
