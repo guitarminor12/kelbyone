@@ -12,14 +12,11 @@ function login(username, password) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             var dataResponse = JSON.parse(this.responseText);
-            window.location.replace("courses.html")
-
-            //tokens are not working with the way the api is configured
-             if(dataResponse.token && dataResponse.token.length){
-                 handleSuccess(dataResponse);
-             } else {
-                 handleFailure(dataResponse);
-             }
+            if(dataResponse.token && dataResponse.token.length){
+                handleSuccess(dataResponse);
+            } else {
+                handleFailure(dataResponse);
+            }
         }
     });
 
