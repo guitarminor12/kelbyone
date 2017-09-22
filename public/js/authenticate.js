@@ -17,7 +17,7 @@ function login(username, password) {
             } else {
                 handleFailure(dataResponse);
             }
-            window.location.href = "./courses.html"
+            window.location.href = "courses.html"
         }
     });
 
