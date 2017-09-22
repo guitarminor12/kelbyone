@@ -1,6 +1,4 @@
 function populateCourseList(course) {
-    var container = document.createElement("div");
-    container.className += "courseContainer";
     container.appendChild(createCourseChildren("id", course.id));
     container.appendChild(createCourseChildren("title", course.title));
     container.appendChild(createCourseChildren("content", course.content));
@@ -10,7 +8,7 @@ function populateCourseList(course) {
     container.appendChild(createCourseChildren("thumbnail_url", course.thumbnail_url));
     container.appendChild(createCourseChildren("published_date", course.published_date));
 
-    document.getElementById('courses-list').appendChild(container);
+    document.getElementById('courseContainer').appendChild(container);
 }
 
 
