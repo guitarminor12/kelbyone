@@ -32,7 +32,7 @@ function login(username, password) {
 
 function handleSuccess(data){
     setCookie("token", data.token, 2);
-    window.location.href = window.location.hostname + "/courses.html";
+    window.location.href = "/courses.html";
 
 }
 
