@@ -1,7 +1,7 @@
 function populateCourseList(course) {
     var container = document.createElement("div");
     container.className += "courseContainer";
-    container.appendChild(createCourseChildren("id", course.id));
+    container.appendChild(createCourseChildrenAnchor("id", course.id));
     container.appendChild(createCourseChildren("title", course.title));
     container.appendChild(createCourseChildren("content", course.content));
     container.appendChild(createCourseChildren("duration", course.duration));
@@ -20,6 +20,14 @@ function createCourseChildren(childName, value){
     child.setAttribute("id", childName);
     return child;
 }
+
+function createCourseChildrenAnchor(childName, value){
+    var child = document.createElement("a");
+    child.href = "/coursedetail.html?courseid=" + value;
+    child.setAttribute("id", childName);
+    return child;
+}
+
 
 
 function getCourses(category) {
