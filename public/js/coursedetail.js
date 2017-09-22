@@ -8,8 +8,6 @@ function populateCourseList(course) {
     container.appendChild(createCourseChildren("num_lessons", course.num_lessons));
     container.appendChild(createCourseChildren("thumbnail_url", course.thumbnail_url));
     container.appendChild(createCourseChildren("published_date", course.published_date));
-
-    container.appendChild(container);
 }
 
 
