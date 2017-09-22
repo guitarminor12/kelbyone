@@ -1,5 +1,24 @@
-function populateCourseList(course){
-    document.getElementById('courses-list').innerHTML += JSON.stringify(course, null, 4);
+function populateCourseList(course) {
+    var container = document.createElement("div");
+    container.className += "courseContainer";
+    container.appendChild(createCourseChildren("id", course.id));
+    container.appendChild(createCourseChildren("title", course.title));
+    container.appendChild(createCourseChildren("content", course.content));
+    container.appendChild(createCourseChildren("duration", course.duration));
+    container.appendChild(createCourseChildren("instructor", course.instructor));
+    container.appendChild(createCourseChildren("num_lessons", course.num_lessons));
+    container.appendChild(createCourseChildren("thumbnail_url", course.thumbnail_url));
+    container.appendChild(createCourseChildren("published_date", course.published_date));
+
+    document.getElementById('courses-list').innerHTML += container;
+}
+
+
+function createCourseChildren(childName, value){
+    var child = document.createElement("div");
+    child.innerHTML = value;
+    child.setAttribute("id", childName);
+    return child;
 }
 
 
@@ -7,7 +26,7 @@ function getCourses(category) {
     if (category && category.length) {
         document.getElementById('courses-list').innerHTML = '';
     }
-    
+
     var data = null;
 
     var xhr = new XMLHttpRequest();
