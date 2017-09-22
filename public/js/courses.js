@@ -5,7 +5,7 @@ function populateCourseList(course) {
     container.appendChild(createCourseChildren("title", course.title));
     container.appendChild(createCourseChildren("content", course.content));
     container.appendChild(createCourseChildren("duration", course.duration));
-    container.appendChild(createCourseChildren("instructor", course.instructor));
+    container.appendChild(createCourseChildren("instructor", JSON.stringify(course.instructor)));
     container.appendChild(createCourseChildren("num_lessons", course.num_lessons));
     container.appendChild(createCourseChildren("thumbnail_url", course.thumbnail_url));
     container.appendChild(createCourseChildren("published_date", course.published_date));
