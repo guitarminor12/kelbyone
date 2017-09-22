@@ -26,6 +26,9 @@ function getCourses(category) {
     if (category && category.length) {
         document.getElementById('courses-list').innerHTML = '';
     }
+    if (category === "Select a Course Category") {
+        category = '';
+    }
 
     var data = null;
 
