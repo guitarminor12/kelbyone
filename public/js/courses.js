@@ -24,6 +24,7 @@ function createCourseChildren(childName, value){
 function createCourseChildrenAnchor(childName, value){
     var child = document.createElement("a");
     child.href = "/coursedetail.html?courseid=" + value;
+    child.innerHTML = "View Details";
     child.setAttribute("id", childName);
     return child;
 }
